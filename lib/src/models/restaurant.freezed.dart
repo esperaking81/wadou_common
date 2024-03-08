@@ -61,6 +61,8 @@ mixin _$Restaurant {
   DateTime get createdAt => throw _privateConstructorUsedError;
   RestaurantManager? get manager => throw _privateConstructorUsedError;
   set manager(RestaurantManager? value) => throw _privateConstructorUsedError;
+  Subscription? get subscription => throw _privateConstructorUsedError;
+  set subscription(Subscription? value) => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -95,9 +97,11 @@ abstract class $RestaurantCopyWith<$Res> {
       DateTime updatedAt,
       String authorId,
       DateTime createdAt,
-      RestaurantManager? manager});
+      RestaurantManager? manager,
+      Subscription? subscription});
 
   $RestaurantManagerCopyWith<$Res>? get manager;
+  $SubscriptionCopyWith<$Res>? get subscription;
 }
 
 /// @nodoc
@@ -134,6 +138,7 @@ class _$RestaurantCopyWithImpl<$Res, $Val extends Restaurant>
     Object? authorId = null,
     Object? createdAt = null,
     Object? manager = freezed,
+    Object? subscription = freezed,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -220,6 +225,10 @@ class _$RestaurantCopyWithImpl<$Res, $Val extends Restaurant>
           ? _value.manager
           : manager // ignore: cast_nullable_to_non_nullable
               as RestaurantManager?,
+      subscription: freezed == subscription
+          ? _value.subscription
+          : subscription // ignore: cast_nullable_to_non_nullable
+              as Subscription?,
     ) as $Val);
   }
 
@@ -232,6 +241,18 @@ class _$RestaurantCopyWithImpl<$Res, $Val extends Restaurant>
 
     return $RestaurantManagerCopyWith<$Res>(_value.manager!, (value) {
       return _then(_value.copyWith(manager: value) as $Val);
+    });
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $SubscriptionCopyWith<$Res>? get subscription {
+    if (_value.subscription == null) {
+      return null;
+    }
+
+    return $SubscriptionCopyWith<$Res>(_value.subscription!, (value) {
+      return _then(_value.copyWith(subscription: value) as $Val);
     });
   }
 }
@@ -265,10 +286,13 @@ abstract class _$$RestaurantImplCopyWith<$Res>
       DateTime updatedAt,
       String authorId,
       DateTime createdAt,
-      RestaurantManager? manager});
+      RestaurantManager? manager,
+      Subscription? subscription});
 
   @override
   $RestaurantManagerCopyWith<$Res>? get manager;
+  @override
+  $SubscriptionCopyWith<$Res>? get subscription;
 }
 
 /// @nodoc
@@ -303,6 +327,7 @@ class __$$RestaurantImplCopyWithImpl<$Res>
     Object? authorId = null,
     Object? createdAt = null,
     Object? manager = freezed,
+    Object? subscription = freezed,
   }) {
     return _then(_$RestaurantImpl(
       id: null == id
@@ -389,6 +414,10 @@ class __$$RestaurantImplCopyWithImpl<$Res>
           ? _value.manager
           : manager // ignore: cast_nullable_to_non_nullable
               as RestaurantManager?,
+      subscription: freezed == subscription
+          ? _value.subscription
+          : subscription // ignore: cast_nullable_to_non_nullable
+              as Subscription?,
     ));
   }
 }
@@ -417,7 +446,8 @@ class _$RestaurantImpl implements _Restaurant {
       required this.updatedAt,
       this.authorId = '',
       required this.createdAt,
-      this.manager});
+      this.manager,
+      this.subscription});
 
   factory _$RestaurantImpl.fromJson(Map<String, dynamic> json) =>
       _$$RestaurantImplFromJson(json);
@@ -482,10 +512,12 @@ class _$RestaurantImpl implements _Restaurant {
   final DateTime createdAt;
   @override
   RestaurantManager? manager;
+  @override
+  Subscription? subscription;
 
   @override
   String toString() {
-    return 'Restaurant(id: $id, name: $name, description: $description, city: $city, country: $country, countryCode: $countryCode, takeOutAvailable: $takeOutAvailable, onSiteAvailable: $onSiteAvailable, deliveryAvailable: $deliveryAvailable, phone: $phone, address: $address, workingDays: $workingDays, specialities: $specialities, images: $images, menuImages: $menuImages, websiteURL: $websiteURL, averageMealPrice: $averageMealPrice, updatedAt: $updatedAt, authorId: $authorId, createdAt: $createdAt, manager: $manager)';
+    return 'Restaurant(id: $id, name: $name, description: $description, city: $city, country: $country, countryCode: $countryCode, takeOutAvailable: $takeOutAvailable, onSiteAvailable: $onSiteAvailable, deliveryAvailable: $deliveryAvailable, phone: $phone, address: $address, workingDays: $workingDays, specialities: $specialities, images: $images, menuImages: $menuImages, websiteURL: $websiteURL, averageMealPrice: $averageMealPrice, updatedAt: $updatedAt, authorId: $authorId, createdAt: $createdAt, manager: $manager, subscription: $subscription)';
   }
 
   @JsonKey(ignore: true)
@@ -524,7 +556,8 @@ abstract class _Restaurant implements Restaurant {
       required DateTime updatedAt,
       String authorId,
       required final DateTime createdAt,
-      RestaurantManager? manager}) = _$RestaurantImpl;
+      RestaurantManager? manager,
+      Subscription? subscription}) = _$RestaurantImpl;
 
   factory _Restaurant.fromJson(Map<String, dynamic> json) =
       _$RestaurantImpl.fromJson;
@@ -591,6 +624,9 @@ abstract class _Restaurant implements Restaurant {
   @override
   RestaurantManager? get manager;
   set manager(RestaurantManager? value);
+  @override
+  Subscription? get subscription;
+  set subscription(Subscription? value);
   @override
   @JsonKey(ignore: true)
   _$$RestaurantImplCopyWith<_$RestaurantImpl> get copyWith =>

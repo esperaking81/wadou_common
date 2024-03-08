@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:common/src/models/subscription.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 import 'restaurant_manager.dart';
@@ -31,6 +32,7 @@ class Restaurant with _$Restaurant {
     @Default('') String authorId,
     required final DateTime createdAt,
     RestaurantManager? manager,
+    Subscription? subscription,
   }) = _Restaurant;
 
   factory Restaurant.fromJson(Map<String, Object?> json) =>
