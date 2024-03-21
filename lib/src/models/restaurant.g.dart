@@ -46,6 +46,8 @@ _$RestaurantImpl _$$RestaurantImplFromJson(Map<String, dynamic> json) =>
       subscription: json['subscription'] == null
           ? null
           : Subscription.fromJson(json['subscription'] as Map<String, dynamic>),
+      viewsCount: json['viewsCount'] as int?,
+      reviewsCount: json['reviewsCount'] as int?,
     );
 
 const _$$RestaurantImplFieldMap = <String, String>{
@@ -71,6 +73,8 @@ const _$$RestaurantImplFieldMap = <String, String>{
   'createdAt': 'createdAt',
   'manager': 'manager',
   'subscription': 'subscription',
+  'viewsCount': 'viewsCount',
+  'reviewsCount': 'reviewsCount',
 };
 
 // ignore: unused_element
@@ -119,6 +123,10 @@ abstract class _$$RestaurantImplPerFieldToJson {
   static Object? manager(RestaurantManager? instance) => instance?.toJson();
   // ignore: unused_element
   static Object? subscription(Subscription? instance) => instance?.toJson();
+  // ignore: unused_element
+  static Object? viewsCount(int? instance) => instance;
+  // ignore: unused_element
+  static Object? reviewsCount(int? instance) => instance;
 }
 
 Map<String, dynamic> _$$RestaurantImplToJson(_$RestaurantImpl instance) {
@@ -153,5 +161,7 @@ Map<String, dynamic> _$$RestaurantImplToJson(_$RestaurantImpl instance) {
 
   writeNotNull('manager', instance.manager?.toJson());
   writeNotNull('subscription', instance.subscription?.toJson());
+  writeNotNull('viewsCount', instance.viewsCount);
+  writeNotNull('reviewsCount', instance.reviewsCount);
   return val;
 }

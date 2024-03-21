@@ -63,6 +63,10 @@ mixin _$Restaurant {
   set manager(RestaurantManager? value) => throw _privateConstructorUsedError;
   Subscription? get subscription => throw _privateConstructorUsedError;
   set subscription(Subscription? value) => throw _privateConstructorUsedError;
+  int? get viewsCount => throw _privateConstructorUsedError;
+  set viewsCount(int? value) => throw _privateConstructorUsedError;
+  int? get reviewsCount => throw _privateConstructorUsedError;
+  set reviewsCount(int? value) => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -98,7 +102,9 @@ abstract class $RestaurantCopyWith<$Res> {
       String authorId,
       DateTime createdAt,
       RestaurantManager? manager,
-      Subscription? subscription});
+      Subscription? subscription,
+      int? viewsCount,
+      int? reviewsCount});
 
   $RestaurantManagerCopyWith<$Res>? get manager;
   $SubscriptionCopyWith<$Res>? get subscription;
@@ -139,6 +145,8 @@ class _$RestaurantCopyWithImpl<$Res, $Val extends Restaurant>
     Object? createdAt = null,
     Object? manager = freezed,
     Object? subscription = freezed,
+    Object? viewsCount = freezed,
+    Object? reviewsCount = freezed,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -229,6 +237,14 @@ class _$RestaurantCopyWithImpl<$Res, $Val extends Restaurant>
           ? _value.subscription
           : subscription // ignore: cast_nullable_to_non_nullable
               as Subscription?,
+      viewsCount: freezed == viewsCount
+          ? _value.viewsCount
+          : viewsCount // ignore: cast_nullable_to_non_nullable
+              as int?,
+      reviewsCount: freezed == reviewsCount
+          ? _value.reviewsCount
+          : reviewsCount // ignore: cast_nullable_to_non_nullable
+              as int?,
     ) as $Val);
   }
 
@@ -287,7 +303,9 @@ abstract class _$$RestaurantImplCopyWith<$Res>
       String authorId,
       DateTime createdAt,
       RestaurantManager? manager,
-      Subscription? subscription});
+      Subscription? subscription,
+      int? viewsCount,
+      int? reviewsCount});
 
   @override
   $RestaurantManagerCopyWith<$Res>? get manager;
@@ -328,6 +346,8 @@ class __$$RestaurantImplCopyWithImpl<$Res>
     Object? createdAt = null,
     Object? manager = freezed,
     Object? subscription = freezed,
+    Object? viewsCount = freezed,
+    Object? reviewsCount = freezed,
   }) {
     return _then(_$RestaurantImpl(
       id: null == id
@@ -418,6 +438,14 @@ class __$$RestaurantImplCopyWithImpl<$Res>
           ? _value.subscription
           : subscription // ignore: cast_nullable_to_non_nullable
               as Subscription?,
+      viewsCount: freezed == viewsCount
+          ? _value.viewsCount
+          : viewsCount // ignore: cast_nullable_to_non_nullable
+              as int?,
+      reviewsCount: freezed == reviewsCount
+          ? _value.reviewsCount
+          : reviewsCount // ignore: cast_nullable_to_non_nullable
+              as int?,
     ));
   }
 }
@@ -447,7 +475,9 @@ class _$RestaurantImpl implements _Restaurant {
       this.authorId = '',
       required this.createdAt,
       this.manager,
-      this.subscription});
+      this.subscription,
+      this.viewsCount,
+      this.reviewsCount});
 
   factory _$RestaurantImpl.fromJson(Map<String, dynamic> json) =>
       _$$RestaurantImplFromJson(json);
@@ -514,10 +544,14 @@ class _$RestaurantImpl implements _Restaurant {
   RestaurantManager? manager;
   @override
   Subscription? subscription;
+  @override
+  int? viewsCount;
+  @override
+  int? reviewsCount;
 
   @override
   String toString() {
-    return 'Restaurant(id: $id, name: $name, description: $description, city: $city, country: $country, countryCode: $countryCode, takeOutAvailable: $takeOutAvailable, onSiteAvailable: $onSiteAvailable, deliveryAvailable: $deliveryAvailable, phone: $phone, address: $address, workingDays: $workingDays, specialities: $specialities, images: $images, menuImages: $menuImages, websiteURL: $websiteURL, averageMealPrice: $averageMealPrice, updatedAt: $updatedAt, authorId: $authorId, createdAt: $createdAt, manager: $manager, subscription: $subscription)';
+    return 'Restaurant(id: $id, name: $name, description: $description, city: $city, country: $country, countryCode: $countryCode, takeOutAvailable: $takeOutAvailable, onSiteAvailable: $onSiteAvailable, deliveryAvailable: $deliveryAvailable, phone: $phone, address: $address, workingDays: $workingDays, specialities: $specialities, images: $images, menuImages: $menuImages, websiteURL: $websiteURL, averageMealPrice: $averageMealPrice, updatedAt: $updatedAt, authorId: $authorId, createdAt: $createdAt, manager: $manager, subscription: $subscription, viewsCount: $viewsCount, reviewsCount: $reviewsCount)';
   }
 
   @JsonKey(ignore: true)
@@ -557,7 +591,9 @@ abstract class _Restaurant implements Restaurant {
       String authorId,
       required final DateTime createdAt,
       RestaurantManager? manager,
-      Subscription? subscription}) = _$RestaurantImpl;
+      Subscription? subscription,
+      int? viewsCount,
+      int? reviewsCount}) = _$RestaurantImpl;
 
   factory _Restaurant.fromJson(Map<String, dynamic> json) =
       _$RestaurantImpl.fromJson;
@@ -627,6 +663,12 @@ abstract class _Restaurant implements Restaurant {
   @override
   Subscription? get subscription;
   set subscription(Subscription? value);
+  @override
+  int? get viewsCount;
+  set viewsCount(int? value);
+  @override
+  int? get reviewsCount;
+  set reviewsCount(int? value);
   @override
   @JsonKey(ignore: true)
   _$$RestaurantImplCopyWith<_$RestaurantImpl> get copyWith =>

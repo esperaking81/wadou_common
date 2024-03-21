@@ -33,6 +33,8 @@ class Restaurant with _$Restaurant {
     required final DateTime createdAt,
     RestaurantManager? manager,
     Subscription? subscription,
+    int? viewsCount,
+    int? reviewsCount,
   }) = _Restaurant;
 
   factory Restaurant.fromJson(Map<String, Object?> json) =>
