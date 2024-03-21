@@ -121,28 +121,37 @@ abstract class _$$RestaurantImplPerFieldToJson {
   static Object? subscription(Subscription? instance) => instance?.toJson();
 }
 
-Map<String, dynamic> _$$RestaurantImplToJson(_$RestaurantImpl instance) =>
-    <String, dynamic>{
-      'id': instance.id,
-      'name': instance.name,
-      'description': instance.description,
-      'city': instance.city,
-      'country': instance.country,
-      'countryCode': instance.countryCode,
-      'takeOutAvailable': instance.takeOutAvailable,
-      'onSiteAvailable': instance.onSiteAvailable,
-      'deliveryAvailable': instance.deliveryAvailable,
-      'phone': instance.phone,
-      'address': instance.address,
-      'workingDays': instance.workingDays,
-      'specialities': instance.specialities,
-      'images': instance.images,
-      'menuImages': instance.menuImages,
-      'websiteURL': instance.websiteURL,
-      'averageMealPrice': instance.averageMealPrice,
-      'updatedAt': instance.updatedAt.toIso8601String(),
-      'authorId': instance.authorId,
-      'createdAt': instance.createdAt.toIso8601String(),
-      'manager': instance.manager?.toJson(),
-      'subscription': instance.subscription?.toJson(),
-    };
+Map<String, dynamic> _$$RestaurantImplToJson(_$RestaurantImpl instance) {
+  final val = <String, dynamic>{
+    'id': instance.id,
+    'name': instance.name,
+    'description': instance.description,
+    'city': instance.city,
+    'country': instance.country,
+    'countryCode': instance.countryCode,
+    'takeOutAvailable': instance.takeOutAvailable,
+    'onSiteAvailable': instance.onSiteAvailable,
+    'deliveryAvailable': instance.deliveryAvailable,
+    'phone': instance.phone,
+    'address': instance.address,
+    'workingDays': instance.workingDays,
+    'specialities': instance.specialities,
+    'images': instance.images,
+    'menuImages': instance.menuImages,
+    'websiteURL': instance.websiteURL,
+    'averageMealPrice': instance.averageMealPrice,
+    'updatedAt': instance.updatedAt.toIso8601String(),
+    'authorId': instance.authorId,
+    'createdAt': instance.createdAt.toIso8601String(),
+  };
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('manager', instance.manager?.toJson());
+  writeNotNull('subscription', instance.subscription?.toJson());
+  return val;
+}

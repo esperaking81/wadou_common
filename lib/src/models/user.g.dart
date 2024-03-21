@@ -51,17 +51,25 @@ abstract class _$$UserImplPerFieldToJson {
   static Object? type(UserType instance) => _$UserTypeEnumMap[instance]!;
 }
 
-Map<String, dynamic> _$$UserImplToJson(_$UserImpl instance) =>
-    <String, dynamic>{
-      'uid': instance.uid,
-      'name': instance.name,
-      'email': instance.email,
-      'surname': instance.surname,
-      'phoneNumber': instance.phoneNumber,
-      'updatedAt': instance.updatedAt?.toIso8601String(),
-      'createdAt': instance.createdAt.toIso8601String(),
-      'type': _$UserTypeEnumMap[instance.type]!,
-    };
+Map<String, dynamic> _$$UserImplToJson(_$UserImpl instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('uid', instance.uid);
+  writeNotNull('name', instance.name);
+  writeNotNull('email', instance.email);
+  writeNotNull('surname', instance.surname);
+  writeNotNull('phoneNumber', instance.phoneNumber);
+  writeNotNull('updatedAt', instance.updatedAt?.toIso8601String());
+  val['createdAt'] = instance.createdAt.toIso8601String();
+  val['type'] = _$UserTypeEnumMap[instance.type]!;
+  return val;
+}
 
 const _$UserTypeEnumMap = {
   UserType.client: 'client',
