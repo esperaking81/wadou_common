@@ -35,6 +35,7 @@ class Restaurant with _$Restaurant {
     Subscription? subscription,
     int? viewsCount,
     int? reviewsCount,
+    @Default(false) bool isVisible,
   }) = _Restaurant;
 
   factory Restaurant.fromJson(Map<String, Object?> json) =>

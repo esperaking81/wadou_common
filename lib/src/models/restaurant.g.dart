@@ -48,6 +48,7 @@ _$RestaurantImpl _$$RestaurantImplFromJson(Map<String, dynamic> json) =>
           : Subscription.fromJson(json['subscription'] as Map<String, dynamic>),
       viewsCount: json['viewsCount'] as int?,
       reviewsCount: json['reviewsCount'] as int?,
+      isVisible: json['isVisible'] as bool? ?? false,
     );
 
 const _$$RestaurantImplFieldMap = <String, String>{
@@ -75,6 +76,7 @@ const _$$RestaurantImplFieldMap = <String, String>{
   'subscription': 'subscription',
   'viewsCount': 'viewsCount',
   'reviewsCount': 'reviewsCount',
+  'isVisible': 'isVisible',
 };
 
 // ignore: unused_element
@@ -127,6 +129,8 @@ abstract class _$$RestaurantImplPerFieldToJson {
   static Object? viewsCount(int? instance) => instance;
   // ignore: unused_element
   static Object? reviewsCount(int? instance) => instance;
+  // ignore: unused_element
+  static Object? isVisible(bool instance) => instance;
 }
 
 Map<String, dynamic> _$$RestaurantImplToJson(_$RestaurantImpl instance) {
@@ -163,5 +167,6 @@ Map<String, dynamic> _$$RestaurantImplToJson(_$RestaurantImpl instance) {
   writeNotNull('subscription', instance.subscription?.toJson());
   writeNotNull('viewsCount', instance.viewsCount);
   writeNotNull('reviewsCount', instance.reviewsCount);
+  val['isVisible'] = instance.isVisible;
   return val;
 }

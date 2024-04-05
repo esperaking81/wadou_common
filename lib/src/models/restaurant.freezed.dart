@@ -67,6 +67,8 @@ mixin _$Restaurant {
   set viewsCount(int? value) => throw _privateConstructorUsedError;
   int? get reviewsCount => throw _privateConstructorUsedError;
   set reviewsCount(int? value) => throw _privateConstructorUsedError;
+  bool get isVisible => throw _privateConstructorUsedError;
+  set isVisible(bool value) => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -104,7 +106,8 @@ abstract class $RestaurantCopyWith<$Res> {
       RestaurantManager? manager,
       Subscription? subscription,
       int? viewsCount,
-      int? reviewsCount});
+      int? reviewsCount,
+      bool isVisible});
 
   $RestaurantManagerCopyWith<$Res>? get manager;
   $SubscriptionCopyWith<$Res>? get subscription;
@@ -147,6 +150,7 @@ class _$RestaurantCopyWithImpl<$Res, $Val extends Restaurant>
     Object? subscription = freezed,
     Object? viewsCount = freezed,
     Object? reviewsCount = freezed,
+    Object? isVisible = null,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -245,6 +249,10 @@ class _$RestaurantCopyWithImpl<$Res, $Val extends Restaurant>
           ? _value.reviewsCount
           : reviewsCount // ignore: cast_nullable_to_non_nullable
               as int?,
+      isVisible: null == isVisible
+          ? _value.isVisible
+          : isVisible // ignore: cast_nullable_to_non_nullable
+              as bool,
     ) as $Val);
   }
 
@@ -305,7 +313,8 @@ abstract class _$$RestaurantImplCopyWith<$Res>
       RestaurantManager? manager,
       Subscription? subscription,
       int? viewsCount,
-      int? reviewsCount});
+      int? reviewsCount,
+      bool isVisible});
 
   @override
   $RestaurantManagerCopyWith<$Res>? get manager;
@@ -348,6 +357,7 @@ class __$$RestaurantImplCopyWithImpl<$Res>
     Object? subscription = freezed,
     Object? viewsCount = freezed,
     Object? reviewsCount = freezed,
+    Object? isVisible = null,
   }) {
     return _then(_$RestaurantImpl(
       id: null == id
@@ -446,6 +456,10 @@ class __$$RestaurantImplCopyWithImpl<$Res>
           ? _value.reviewsCount
           : reviewsCount // ignore: cast_nullable_to_non_nullable
               as int?,
+      isVisible: null == isVisible
+          ? _value.isVisible
+          : isVisible // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
@@ -477,7 +491,8 @@ class _$RestaurantImpl implements _Restaurant {
       this.manager,
       this.subscription,
       this.viewsCount,
-      this.reviewsCount});
+      this.reviewsCount,
+      this.isVisible = false});
 
   factory _$RestaurantImpl.fromJson(Map<String, dynamic> json) =>
       _$$RestaurantImplFromJson(json);
@@ -548,10 +563,13 @@ class _$RestaurantImpl implements _Restaurant {
   int? viewsCount;
   @override
   int? reviewsCount;
+  @override
+  @JsonKey()
+  bool isVisible;
 
   @override
   String toString() {
-    return 'Restaurant(id: $id, name: $name, description: $description, city: $city, country: $country, countryCode: $countryCode, takeOutAvailable: $takeOutAvailable, onSiteAvailable: $onSiteAvailable, deliveryAvailable: $deliveryAvailable, phone: $phone, address: $address, workingDays: $workingDays, specialities: $specialities, images: $images, menuImages: $menuImages, websiteURL: $websiteURL, averageMealPrice: $averageMealPrice, updatedAt: $updatedAt, authorId: $authorId, createdAt: $createdAt, manager: $manager, subscription: $subscription, viewsCount: $viewsCount, reviewsCount: $reviewsCount)';
+    return 'Restaurant(id: $id, name: $name, description: $description, city: $city, country: $country, countryCode: $countryCode, takeOutAvailable: $takeOutAvailable, onSiteAvailable: $onSiteAvailable, deliveryAvailable: $deliveryAvailable, phone: $phone, address: $address, workingDays: $workingDays, specialities: $specialities, images: $images, menuImages: $menuImages, websiteURL: $websiteURL, averageMealPrice: $averageMealPrice, updatedAt: $updatedAt, authorId: $authorId, createdAt: $createdAt, manager: $manager, subscription: $subscription, viewsCount: $viewsCount, reviewsCount: $reviewsCount, isVisible: $isVisible)';
   }
 
   @JsonKey(ignore: true)
@@ -593,7 +611,8 @@ abstract class _Restaurant implements Restaurant {
       RestaurantManager? manager,
       Subscription? subscription,
       int? viewsCount,
-      int? reviewsCount}) = _$RestaurantImpl;
+      int? reviewsCount,
+      bool isVisible}) = _$RestaurantImpl;
 
   factory _Restaurant.fromJson(Map<String, dynamic> json) =
       _$RestaurantImpl.fromJson;
@@ -669,6 +688,9 @@ abstract class _Restaurant implements Restaurant {
   @override
   int? get reviewsCount;
   set reviewsCount(int? value);
+  @override
+  bool get isVisible;
+  set isVisible(bool value);
   @override
   @JsonKey(ignore: true)
   _$$RestaurantImplCopyWith<_$RestaurantImpl> get copyWith =>
