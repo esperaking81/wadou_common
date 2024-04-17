@@ -1,5 +1,3 @@
-import 'dart:html';
-
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:common/src/models/location.dart';
 import 'package:common/src/models/subscription.dart';
