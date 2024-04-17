@@ -1,4 +1,7 @@
+import 'dart:html';
+
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:common/src/models/location.dart';
 import 'package:common/src/models/subscription.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
@@ -36,6 +39,7 @@ class Restaurant with _$Restaurant {
     int? viewsCount,
     int? reviewsCount,
     @Default(false) bool isVisible,
+    @Default(Location()) Location coordinates,
   }) = _Restaurant;
 
   factory Restaurant.fromJson(Map<String, Object?> json) =>

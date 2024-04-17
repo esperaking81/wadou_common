@@ -49,6 +49,9 @@ _$RestaurantImpl _$$RestaurantImplFromJson(Map<String, dynamic> json) =>
       viewsCount: json['viewsCount'] as int?,
       reviewsCount: json['reviewsCount'] as int?,
       isVisible: json['isVisible'] as bool? ?? false,
+      coordinates: json['coordinates'] == null
+          ? const Location()
+          : Location.fromJson(json['coordinates'] as Map<String, dynamic>),
     );
 
 const _$$RestaurantImplFieldMap = <String, String>{
@@ -77,6 +80,7 @@ const _$$RestaurantImplFieldMap = <String, String>{
   'viewsCount': 'viewsCount',
   'reviewsCount': 'reviewsCount',
   'isVisible': 'isVisible',
+  'coordinates': 'coordinates',
 };
 
 // ignore: unused_element
@@ -131,6 +135,8 @@ abstract class _$$RestaurantImplPerFieldToJson {
   static Object? reviewsCount(int? instance) => instance;
   // ignore: unused_element
   static Object? isVisible(bool instance) => instance;
+  // ignore: unused_element
+  static Object? coordinates(Location instance) => instance.toJson();
 }
 
 Map<String, dynamic> _$$RestaurantImplToJson(_$RestaurantImpl instance) {
@@ -168,5 +174,6 @@ Map<String, dynamic> _$$RestaurantImplToJson(_$RestaurantImpl instance) {
   writeNotNull('viewsCount', instance.viewsCount);
   writeNotNull('reviewsCount', instance.reviewsCount);
   val['isVisible'] = instance.isVisible;
+  val['coordinates'] = instance.coordinates.toJson();
   return val;
 }

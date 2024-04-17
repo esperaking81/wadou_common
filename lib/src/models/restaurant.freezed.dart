@@ -69,6 +69,8 @@ mixin _$Restaurant {
   set reviewsCount(int? value) => throw _privateConstructorUsedError;
   bool get isVisible => throw _privateConstructorUsedError;
   set isVisible(bool value) => throw _privateConstructorUsedError;
+  Location get coordinates => throw _privateConstructorUsedError;
+  set coordinates(Location value) => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -107,10 +109,12 @@ abstract class $RestaurantCopyWith<$Res> {
       Subscription? subscription,
       int? viewsCount,
       int? reviewsCount,
-      bool isVisible});
+      bool isVisible,
+      Location coordinates});
 
   $RestaurantManagerCopyWith<$Res>? get manager;
   $SubscriptionCopyWith<$Res>? get subscription;
+  $LocationCopyWith<$Res> get coordinates;
 }
 
 /// @nodoc
@@ -151,6 +155,7 @@ class _$RestaurantCopyWithImpl<$Res, $Val extends Restaurant>
     Object? viewsCount = freezed,
     Object? reviewsCount = freezed,
     Object? isVisible = null,
+    Object? coordinates = null,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -253,6 +258,10 @@ class _$RestaurantCopyWithImpl<$Res, $Val extends Restaurant>
           ? _value.isVisible
           : isVisible // ignore: cast_nullable_to_non_nullable
               as bool,
+      coordinates: null == coordinates
+          ? _value.coordinates
+          : coordinates // ignore: cast_nullable_to_non_nullable
+              as Location,
     ) as $Val);
   }
 
@@ -277,6 +286,14 @@ class _$RestaurantCopyWithImpl<$Res, $Val extends Restaurant>
 
     return $SubscriptionCopyWith<$Res>(_value.subscription!, (value) {
       return _then(_value.copyWith(subscription: value) as $Val);
+    });
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $LocationCopyWith<$Res> get coordinates {
+    return $LocationCopyWith<$Res>(_value.coordinates, (value) {
+      return _then(_value.copyWith(coordinates: value) as $Val);
     });
   }
 }
@@ -314,12 +331,15 @@ abstract class _$$RestaurantImplCopyWith<$Res>
       Subscription? subscription,
       int? viewsCount,
       int? reviewsCount,
-      bool isVisible});
+      bool isVisible,
+      Location coordinates});
 
   @override
   $RestaurantManagerCopyWith<$Res>? get manager;
   @override
   $SubscriptionCopyWith<$Res>? get subscription;
+  @override
+  $LocationCopyWith<$Res> get coordinates;
 }
 
 /// @nodoc
@@ -358,6 +378,7 @@ class __$$RestaurantImplCopyWithImpl<$Res>
     Object? viewsCount = freezed,
     Object? reviewsCount = freezed,
     Object? isVisible = null,
+    Object? coordinates = null,
   }) {
     return _then(_$RestaurantImpl(
       id: null == id
@@ -460,6 +481,10 @@ class __$$RestaurantImplCopyWithImpl<$Res>
           ? _value.isVisible
           : isVisible // ignore: cast_nullable_to_non_nullable
               as bool,
+      coordinates: null == coordinates
+          ? _value.coordinates
+          : coordinates // ignore: cast_nullable_to_non_nullable
+              as Location,
     ));
   }
 }
@@ -492,7 +517,8 @@ class _$RestaurantImpl implements _Restaurant {
       this.subscription,
       this.viewsCount,
       this.reviewsCount,
-      this.isVisible = false});
+      this.isVisible = false,
+      this.coordinates = const Location()});
 
   factory _$RestaurantImpl.fromJson(Map<String, dynamic> json) =>
       _$$RestaurantImplFromJson(json);
@@ -566,10 +592,13 @@ class _$RestaurantImpl implements _Restaurant {
   @override
   @JsonKey()
   bool isVisible;
+  @override
+  @JsonKey()
+  Location coordinates;
 
   @override
   String toString() {
-    return 'Restaurant(id: $id, name: $name, description: $description, city: $city, country: $country, countryCode: $countryCode, takeOutAvailable: $takeOutAvailable, onSiteAvailable: $onSiteAvailable, deliveryAvailable: $deliveryAvailable, phone: $phone, address: $address, workingDays: $workingDays, specialities: $specialities, images: $images, menuImages: $menuImages, websiteURL: $websiteURL, averageMealPrice: $averageMealPrice, updatedAt: $updatedAt, authorId: $authorId, createdAt: $createdAt, manager: $manager, subscription: $subscription, viewsCount: $viewsCount, reviewsCount: $reviewsCount, isVisible: $isVisible)';
+    return 'Restaurant(id: $id, name: $name, description: $description, city: $city, country: $country, countryCode: $countryCode, takeOutAvailable: $takeOutAvailable, onSiteAvailable: $onSiteAvailable, deliveryAvailable: $deliveryAvailable, phone: $phone, address: $address, workingDays: $workingDays, specialities: $specialities, images: $images, menuImages: $menuImages, websiteURL: $websiteURL, averageMealPrice: $averageMealPrice, updatedAt: $updatedAt, authorId: $authorId, createdAt: $createdAt, manager: $manager, subscription: $subscription, viewsCount: $viewsCount, reviewsCount: $reviewsCount, isVisible: $isVisible, coordinates: $coordinates)';
   }
 
   @JsonKey(ignore: true)
@@ -612,7 +641,8 @@ abstract class _Restaurant implements Restaurant {
       Subscription? subscription,
       int? viewsCount,
       int? reviewsCount,
-      bool isVisible}) = _$RestaurantImpl;
+      bool isVisible,
+      Location coordinates}) = _$RestaurantImpl;
 
   factory _Restaurant.fromJson(Map<String, dynamic> json) =
       _$RestaurantImpl.fromJson;
@@ -691,6 +721,9 @@ abstract class _Restaurant implements Restaurant {
   @override
   bool get isVisible;
   set isVisible(bool value);
+  @override
+  Location get coordinates;
+  set coordinates(Location value);
   @override
   @JsonKey(ignore: true)
   _$$RestaurantImplCopyWith<_$RestaurantImpl> get copyWith =>
