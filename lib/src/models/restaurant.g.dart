@@ -19,6 +19,8 @@ _$RestaurantImpl _$$RestaurantImplFromJson(Map<String, dynamic> json) =>
       deliveryAvailable: json['deliveryAvailable'] as bool? ?? false,
       phone: json['phone'] as String? ?? '',
       address: json['address'] as String? ?? '',
+      openingTime: json['openingTime'] as String? ?? '',
+      closingTime: json['closingTime'] as String? ?? '',
       workingDays: (json['workingDays'] as List<dynamic>?)
               ?.map((e) => e as String)
               .toList() ??
@@ -66,6 +68,8 @@ const _$$RestaurantImplFieldMap = <String, String>{
   'deliveryAvailable': 'deliveryAvailable',
   'phone': 'phone',
   'address': 'address',
+  'openingTime': 'openingTime',
+  'closingTime': 'closingTime',
   'workingDays': 'workingDays',
   'specialities': 'specialities',
   'images': 'images',
@@ -107,6 +111,10 @@ abstract class _$$RestaurantImplPerFieldToJson {
   static Object? phone(String instance) => instance;
   // ignore: unused_element
   static Object? address(String instance) => instance;
+  // ignore: unused_element
+  static Object? openingTime(String instance) => instance;
+  // ignore: unused_element
+  static Object? closingTime(String instance) => instance;
   // ignore: unused_element
   static Object? workingDays(List<String> instance) => instance;
   // ignore: unused_element
@@ -152,6 +160,8 @@ Map<String, dynamic> _$$RestaurantImplToJson(_$RestaurantImpl instance) {
     'deliveryAvailable': instance.deliveryAvailable,
     'phone': instance.phone,
     'address': instance.address,
+    'openingTime': instance.openingTime,
+    'closingTime': instance.closingTime,
     'workingDays': instance.workingDays,
     'specialities': instance.specialities,
     'images': instance.images,

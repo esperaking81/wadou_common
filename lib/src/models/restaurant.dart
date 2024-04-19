@@ -23,6 +23,8 @@ class Restaurant with _$Restaurant {
     @Default(false) bool deliveryAvailable,
     @Default('') String phone,
     @Default('') String address,
+    @Default('') String openingTime,
+    @Default('') String closingTime,
     @Default([]) List<String> workingDays,
     @Default([]) List<String> specialities,
     @Default([]) List<String> images,

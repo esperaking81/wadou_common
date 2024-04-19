@@ -42,6 +42,10 @@ mixin _$Restaurant {
   set phone(String value) => throw _privateConstructorUsedError;
   String get address => throw _privateConstructorUsedError;
   set address(String value) => throw _privateConstructorUsedError;
+  String get openingTime => throw _privateConstructorUsedError;
+  set openingTime(String value) => throw _privateConstructorUsedError;
+  String get closingTime => throw _privateConstructorUsedError;
+  set closingTime(String value) => throw _privateConstructorUsedError;
   List<String> get workingDays => throw _privateConstructorUsedError;
   set workingDays(List<String> value) => throw _privateConstructorUsedError;
   List<String> get specialities => throw _privateConstructorUsedError;
@@ -96,6 +100,8 @@ abstract class $RestaurantCopyWith<$Res> {
       bool deliveryAvailable,
       String phone,
       String address,
+      String openingTime,
+      String closingTime,
       List<String> workingDays,
       List<String> specialities,
       List<String> images,
@@ -141,6 +147,8 @@ class _$RestaurantCopyWithImpl<$Res, $Val extends Restaurant>
     Object? deliveryAvailable = null,
     Object? phone = null,
     Object? address = null,
+    Object? openingTime = null,
+    Object? closingTime = null,
     Object? workingDays = null,
     Object? specialities = null,
     Object? images = null,
@@ -201,6 +209,14 @@ class _$RestaurantCopyWithImpl<$Res, $Val extends Restaurant>
       address: null == address
           ? _value.address
           : address // ignore: cast_nullable_to_non_nullable
+              as String,
+      openingTime: null == openingTime
+          ? _value.openingTime
+          : openingTime // ignore: cast_nullable_to_non_nullable
+              as String,
+      closingTime: null == closingTime
+          ? _value.closingTime
+          : closingTime // ignore: cast_nullable_to_non_nullable
               as String,
       workingDays: null == workingDays
           ? _value.workingDays
@@ -318,6 +334,8 @@ abstract class _$$RestaurantImplCopyWith<$Res>
       bool deliveryAvailable,
       String phone,
       String address,
+      String openingTime,
+      String closingTime,
       List<String> workingDays,
       List<String> specialities,
       List<String> images,
@@ -364,6 +382,8 @@ class __$$RestaurantImplCopyWithImpl<$Res>
     Object? deliveryAvailable = null,
     Object? phone = null,
     Object? address = null,
+    Object? openingTime = null,
+    Object? closingTime = null,
     Object? workingDays = null,
     Object? specialities = null,
     Object? images = null,
@@ -424,6 +444,14 @@ class __$$RestaurantImplCopyWithImpl<$Res>
       address: null == address
           ? _value.address
           : address // ignore: cast_nullable_to_non_nullable
+              as String,
+      openingTime: null == openingTime
+          ? _value.openingTime
+          : openingTime // ignore: cast_nullable_to_non_nullable
+              as String,
+      closingTime: null == closingTime
+          ? _value.closingTime
+          : closingTime // ignore: cast_nullable_to_non_nullable
               as String,
       workingDays: null == workingDays
           ? _value.workingDays
@@ -504,6 +532,8 @@ class _$RestaurantImpl implements _Restaurant {
       this.deliveryAvailable = false,
       this.phone = '',
       this.address = '',
+      this.openingTime = '',
+      this.closingTime = '',
       this.workingDays = const [],
       this.specialities = const [],
       this.images = const [],
@@ -558,6 +588,12 @@ class _$RestaurantImpl implements _Restaurant {
   String address;
   @override
   @JsonKey()
+  String openingTime;
+  @override
+  @JsonKey()
+  String closingTime;
+  @override
+  @JsonKey()
   List<String> workingDays;
   @override
   @JsonKey()
@@ -598,7 +634,7 @@ class _$RestaurantImpl implements _Restaurant {
 
   @override
   String toString() {
-    return 'Restaurant(id: $id, name: $name, description: $description, city: $city, country: $country, countryCode: $countryCode, takeOutAvailable: $takeOutAvailable, onSiteAvailable: $onSiteAvailable, deliveryAvailable: $deliveryAvailable, phone: $phone, address: $address, workingDays: $workingDays, specialities: $specialities, images: $images, menuImages: $menuImages, websiteURL: $websiteURL, averageMealPrice: $averageMealPrice, updatedAt: $updatedAt, authorId: $authorId, createdAt: $createdAt, manager: $manager, subscription: $subscription, viewsCount: $viewsCount, reviewsCount: $reviewsCount, isVisible: $isVisible, coordinates: $coordinates)';
+    return 'Restaurant(id: $id, name: $name, description: $description, city: $city, country: $country, countryCode: $countryCode, takeOutAvailable: $takeOutAvailable, onSiteAvailable: $onSiteAvailable, deliveryAvailable: $deliveryAvailable, phone: $phone, address: $address, openingTime: $openingTime, closingTime: $closingTime, workingDays: $workingDays, specialities: $specialities, images: $images, menuImages: $menuImages, websiteURL: $websiteURL, averageMealPrice: $averageMealPrice, updatedAt: $updatedAt, authorId: $authorId, createdAt: $createdAt, manager: $manager, subscription: $subscription, viewsCount: $viewsCount, reviewsCount: $reviewsCount, isVisible: $isVisible, coordinates: $coordinates)';
   }
 
   @JsonKey(ignore: true)
@@ -628,6 +664,8 @@ abstract class _Restaurant implements Restaurant {
       bool deliveryAvailable,
       String phone,
       String address,
+      String openingTime,
+      String closingTime,
       List<String> workingDays,
       List<String> specialities,
       List<String> images,
@@ -680,6 +718,12 @@ abstract class _Restaurant implements Restaurant {
   @override
   String get address;
   set address(String value);
+  @override
+  String get openingTime;
+  set openingTime(String value);
+  @override
+  String get closingTime;
+  set closingTime(String value);
   @override
   List<String> get workingDays;
   set workingDays(List<String> value);
