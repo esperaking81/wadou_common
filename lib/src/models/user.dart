@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:common/src/models/user_role.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 import 'user_type.dart';
@@ -17,6 +18,7 @@ class User with _$User {
     String? phoneNumber,
     DateTime? updatedAt,
     required final DateTime createdAt,
+    @Default(UserRole.normal) UserRole role,
     @Default(UserType.client) final UserType type,
   }) = _User;
 

@@ -4,5 +4,6 @@ export 'sign_up_params.dart';
 export 'subscription.dart';
 export 'restaurant.dart';
 export 'user_type.dart';
+export 'user_role.dart';
 export 'location.dart';
 export 'user.dart';

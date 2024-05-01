@@ -16,6 +16,8 @@ _$UserImpl _$$UserImplFromJson(Map<String, dynamic> json) => _$UserImpl(
           ? null
           : DateTime.parse(json['updatedAt'] as String),
       createdAt: DateTime.parse(json['createdAt'] as String),
+      role: $enumDecodeNullable(_$UserRoleEnumMap, json['role']) ??
+          UserRole.normal,
       type: $enumDecodeNullable(_$UserTypeEnumMap, json['type']) ??
           UserType.client,
     );
@@ -28,6 +30,7 @@ const _$$UserImplFieldMap = <String, String>{
   'phoneNumber': 'phoneNumber',
   'updatedAt': 'updatedAt',
   'createdAt': 'createdAt',
+  'role': 'role',
   'type': 'type',
 };
 
@@ -48,6 +51,8 @@ abstract class _$$UserImplPerFieldToJson {
   // ignore: unused_element
   static Object? createdAt(DateTime instance) => instance.toIso8601String();
   // ignore: unused_element
+  static Object? role(UserRole instance) => _$UserRoleEnumMap[instance]!;
+  // ignore: unused_element
   static Object? type(UserType instance) => _$UserTypeEnumMap[instance]!;
 }
 
@@ -67,9 +72,16 @@ Map<String, dynamic> _$$UserImplToJson(_$UserImpl instance) {
   writeNotNull('phoneNumber', instance.phoneNumber);
   writeNotNull('updatedAt', instance.updatedAt?.toIso8601String());
   val['createdAt'] = instance.createdAt.toIso8601String();
+  val['role'] = _$UserRoleEnumMap[instance.role]!;
   val['type'] = _$UserTypeEnumMap[instance.type]!;
   return val;
 }
+
+const _$UserRoleEnumMap = {
+  UserRole.normal: 'normal',
+  UserRole.admin: 'admin',
+  UserRole.superAdmin: 'superAdmin',
+};
 
 const _$UserTypeEnumMap = {
   UserType.client: 'client',

@@ -33,6 +33,8 @@ mixin _$User {
   DateTime? get updatedAt => throw _privateConstructorUsedError;
   set updatedAt(DateTime? value) => throw _privateConstructorUsedError;
   DateTime get createdAt => throw _privateConstructorUsedError;
+  UserRole get role => throw _privateConstructorUsedError;
+  set role(UserRole value) => throw _privateConstructorUsedError;
   UserType get type => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -53,6 +55,7 @@ abstract class $UserCopyWith<$Res> {
       String? phoneNumber,
       DateTime? updatedAt,
       DateTime createdAt,
+      UserRole role,
       UserType type});
 }
 
@@ -76,6 +79,7 @@ class _$UserCopyWithImpl<$Res, $Val extends User>
     Object? phoneNumber = freezed,
     Object? updatedAt = freezed,
     Object? createdAt = null,
+    Object? role = null,
     Object? type = null,
   }) {
     return _then(_value.copyWith(
@@ -107,6 +111,10 @@ class _$UserCopyWithImpl<$Res, $Val extends User>
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
               as DateTime,
+      role: null == role
+          ? _value.role
+          : role // ignore: cast_nullable_to_non_nullable
+              as UserRole,
       type: null == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
@@ -130,6 +138,7 @@ abstract class _$$UserImplCopyWith<$Res> implements $UserCopyWith<$Res> {
       String? phoneNumber,
       DateTime? updatedAt,
       DateTime createdAt,
+      UserRole role,
       UserType type});
 }
 
@@ -150,6 +159,7 @@ class __$$UserImplCopyWithImpl<$Res>
     Object? phoneNumber = freezed,
     Object? updatedAt = freezed,
     Object? createdAt = null,
+    Object? role = null,
     Object? type = null,
   }) {
     return _then(_$UserImpl(
@@ -181,6 +191,10 @@ class __$$UserImplCopyWithImpl<$Res>
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
               as DateTime,
+      role: null == role
+          ? _value.role
+          : role // ignore: cast_nullable_to_non_nullable
+              as UserRole,
       type: null == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
@@ -200,6 +214,7 @@ class _$UserImpl implements _User {
       this.phoneNumber,
       this.updatedAt,
       required this.createdAt,
+      this.role = UserRole.normal,
       this.type = UserType.client});
 
   factory _$UserImpl.fromJson(Map<String, dynamic> json) =>
@@ -221,11 +236,14 @@ class _$UserImpl implements _User {
   final DateTime createdAt;
   @override
   @JsonKey()
+  UserRole role;
+  @override
+  @JsonKey()
   final UserType type;
 
   @override
   String toString() {
-    return 'User(uid: $uid, name: $name, email: $email, surname: $surname, phoneNumber: $phoneNumber, updatedAt: $updatedAt, createdAt: $createdAt, type: $type)';
+    return 'User(uid: $uid, name: $name, email: $email, surname: $surname, phoneNumber: $phoneNumber, updatedAt: $updatedAt, createdAt: $createdAt, role: $role, type: $type)';
   }
 
   @JsonKey(ignore: true)
@@ -251,6 +269,7 @@ abstract class _User implements User {
       String? phoneNumber,
       DateTime? updatedAt,
       required final DateTime createdAt,
+      UserRole role,
       final UserType type}) = _$UserImpl;
 
   factory _User.fromJson(Map<String, dynamic> json) = _$UserImpl.fromJson;
@@ -275,6 +294,9 @@ abstract class _User implements User {
   set updatedAt(DateTime? value);
   @override
   DateTime get createdAt;
+  @override
+  UserRole get role;
+  set role(UserRole value);
   @override
   UserType get type;
   @override
