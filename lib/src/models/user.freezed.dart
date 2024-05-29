@@ -214,7 +214,7 @@ class _$UserImpl implements _User {
       this.phoneNumber,
       this.updatedAt,
       required this.createdAt,
-      this.role = UserRole.normal,
+      this.role = UserRole.basic,
       this.type = UserType.client});
 
   factory _$UserImpl.fromJson(Map<String, dynamic> json) =>

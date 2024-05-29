@@ -17,7 +17,7 @@ _$UserImpl _$$UserImplFromJson(Map<String, dynamic> json) => _$UserImpl(
           : DateTime.parse(json['updatedAt'] as String),
       createdAt: DateTime.parse(json['createdAt'] as String),
       role: $enumDecodeNullable(_$UserRoleEnumMap, json['role']) ??
-          UserRole.normal,
+          UserRole.basic,
       type: $enumDecodeNullable(_$UserTypeEnumMap, json['type']) ??
           UserType.client,
     );
@@ -78,9 +78,9 @@ Map<String, dynamic> _$$UserImplToJson(_$UserImpl instance) {
 }
 
 const _$UserRoleEnumMap = {
-  UserRole.normal: 'normal',
+  UserRole.basic: 'basic',
   UserRole.admin: 'admin',
-  UserRole.superAdmin: 'superAdmin',
+  UserRole.editor: 'editor',
 };
 
 const _$UserTypeEnumMap = {

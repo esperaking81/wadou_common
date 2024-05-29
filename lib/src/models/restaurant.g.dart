@@ -38,7 +38,7 @@ _$RestaurantImpl _$$RestaurantImplFromJson(Map<String, dynamic> json) =>
               .toList() ??
           const [],
       websiteURL: json['websiteURL'] as String? ?? '',
-      averageMealPrice: json['averageMealPrice'] as int? ?? 1000,
+      averageMealPrice: (json['averageMealPrice'] as num?)?.toInt() ?? 1000,
       updatedAt: DateTime.parse(json['updatedAt'] as String),
       authorId: json['authorId'] as String? ?? '',
       createdAt: DateTime.parse(json['createdAt'] as String),
@@ -48,8 +48,8 @@ _$RestaurantImpl _$$RestaurantImplFromJson(Map<String, dynamic> json) =>
       subscription: json['subscription'] == null
           ? null
           : Subscription.fromJson(json['subscription'] as Map<String, dynamic>),
-      viewsCount: json['viewsCount'] as int?,
-      reviewsCount: json['reviewsCount'] as int?,
+      viewsCount: (json['viewsCount'] as num?)?.toInt(),
+      reviewsCount: (json['reviewsCount'] as num?)?.toInt(),
       isVisible: json['isVisible'] as bool? ?? false,
       coordinates: json['coordinates'] == null
           ? const Location()

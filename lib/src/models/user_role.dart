@@ -1,5 +1,5 @@
 enum UserRole {
-  normal,
+  basic,
   admin,
-  superAdmin,
+  editor,
 }
