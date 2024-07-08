@@ -26,6 +26,8 @@ mixin _$User {
   set name(String? value) => throw _privateConstructorUsedError;
   String? get email => throw _privateConstructorUsedError;
   set email(String? value) => throw _privateConstructorUsedError;
+  UserType? get type => throw _privateConstructorUsedError;
+  set type(UserType? value) => throw _privateConstructorUsedError;
   String? get surname => throw _privateConstructorUsedError;
   set surname(String? value) => throw _privateConstructorUsedError;
   String? get phoneNumber => throw _privateConstructorUsedError;
@@ -35,7 +37,6 @@ mixin _$User {
   DateTime get createdAt => throw _privateConstructorUsedError;
   UserRole get role => throw _privateConstructorUsedError;
   set role(UserRole value) => throw _privateConstructorUsedError;
-  UserType get type => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -51,12 +52,12 @@ abstract class $UserCopyWith<$Res> {
       {String? uid,
       String? name,
       String? email,
+      UserType? type,
       String? surname,
       String? phoneNumber,
       DateTime? updatedAt,
       DateTime createdAt,
-      UserRole role,
-      UserType type});
+      UserRole role});
 }
 
 /// @nodoc
@@ -75,12 +76,12 @@ class _$UserCopyWithImpl<$Res, $Val extends User>
     Object? uid = freezed,
     Object? name = freezed,
     Object? email = freezed,
+    Object? type = freezed,
     Object? surname = freezed,
     Object? phoneNumber = freezed,
     Object? updatedAt = freezed,
     Object? createdAt = null,
     Object? role = null,
-    Object? type = null,
   }) {
     return _then(_value.copyWith(
       uid: freezed == uid
@@ -95,6 +96,10 @@ class _$UserCopyWithImpl<$Res, $Val extends User>
           ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
               as String?,
+      type: freezed == type
+          ? _value.type
+          : type // ignore: cast_nullable_to_non_nullable
+              as UserType?,
       surname: freezed == surname
           ? _value.surname
           : surname // ignore: cast_nullable_to_non_nullable
@@ -115,10 +120,6 @@ class _$UserCopyWithImpl<$Res, $Val extends User>
           ? _value.role
           : role // ignore: cast_nullable_to_non_nullable
               as UserRole,
-      type: null == type
-          ? _value.type
-          : type // ignore: cast_nullable_to_non_nullable
-              as UserType,
     ) as $Val);
   }
 }
@@ -134,12 +135,12 @@ abstract class _$$UserImplCopyWith<$Res> implements $UserCopyWith<$Res> {
       {String? uid,
       String? name,
       String? email,
+      UserType? type,
       String? surname,
       String? phoneNumber,
       DateTime? updatedAt,
       DateTime createdAt,
-      UserRole role,
-      UserType type});
+      UserRole role});
 }
 
 /// @nodoc
@@ -155,12 +156,12 @@ class __$$UserImplCopyWithImpl<$Res>
     Object? uid = freezed,
     Object? name = freezed,
     Object? email = freezed,
+    Object? type = freezed,
     Object? surname = freezed,
     Object? phoneNumber = freezed,
     Object? updatedAt = freezed,
     Object? createdAt = null,
     Object? role = null,
-    Object? type = null,
   }) {
     return _then(_$UserImpl(
       uid: freezed == uid
@@ -175,6 +176,10 @@ class __$$UserImplCopyWithImpl<$Res>
           ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
               as String?,
+      type: freezed == type
+          ? _value.type
+          : type // ignore: cast_nullable_to_non_nullable
+              as UserType?,
       surname: freezed == surname
           ? _value.surname
           : surname // ignore: cast_nullable_to_non_nullable
@@ -195,10 +200,6 @@ class __$$UserImplCopyWithImpl<$Res>
           ? _value.role
           : role // ignore: cast_nullable_to_non_nullable
               as UserRole,
-      type: null == type
-          ? _value.type
-          : type // ignore: cast_nullable_to_non_nullable
-              as UserType,
     ));
   }
 }
@@ -210,12 +211,12 @@ class _$UserImpl implements _User {
       {this.uid,
       this.name,
       this.email,
+      this.type,
       this.surname,
       this.phoneNumber,
       this.updatedAt,
       required this.createdAt,
-      this.role = UserRole.basic,
-      this.type = UserType.client});
+      this.role = UserRole.basic});
 
   factory _$UserImpl.fromJson(Map<String, dynamic> json) =>
       _$$UserImplFromJson(json);
@@ -227,6 +228,8 @@ class _$UserImpl implements _User {
   @override
   String? email;
   @override
+  UserType? type;
+  @override
   String? surname;
   @override
   String? phoneNumber;
@@ -237,13 +240,10 @@ class _$UserImpl implements _User {
   @override
   @JsonKey()
   UserRole role;
-  @override
-  @JsonKey()
-  final UserType type;
 
   @override
   String toString() {
-    return 'User(uid: $uid, name: $name, email: $email, surname: $surname, phoneNumber: $phoneNumber, updatedAt: $updatedAt, createdAt: $createdAt, role: $role, type: $type)';
+    return 'User(uid: $uid, name: $name, email: $email, type: $type, surname: $surname, phoneNumber: $phoneNumber, updatedAt: $updatedAt, createdAt: $createdAt, role: $role)';
   }
 
   @JsonKey(ignore: true)
@@ -265,12 +265,12 @@ abstract class _User implements User {
       {String? uid,
       String? name,
       String? email,
+      UserType? type,
       String? surname,
       String? phoneNumber,
       DateTime? updatedAt,
       required final DateTime createdAt,
-      UserRole role,
-      final UserType type}) = _$UserImpl;
+      UserRole role}) = _$UserImpl;
 
   factory _User.fromJson(Map<String, dynamic> json) = _$UserImpl.fromJson;
 
@@ -283,6 +283,9 @@ abstract class _User implements User {
   @override
   String? get email;
   set email(String? value);
+  @override
+  UserType? get type;
+  set type(UserType? value);
   @override
   String? get surname;
   set surname(String? value);
@@ -297,8 +300,6 @@ abstract class _User implements User {
   @override
   UserRole get role;
   set role(UserRole value);
-  @override
-  UserType get type;
   @override
   @JsonKey(ignore: true)
   _$$UserImplCopyWith<_$UserImpl> get copyWith =>

@@ -14,12 +14,12 @@ class User with _$User {
     String? uid,
     String? name,
     String? email,
+    UserType? type,
     String? surname,
     String? phoneNumber,
     DateTime? updatedAt,
     required final DateTime createdAt,
     @Default(UserRole.basic) UserRole role,
-    @Default(UserType.client) final UserType type,
   }) = _User;
 
   factory User.fromJson(Map<String, Object?> json) => _$UserFromJson(json);
