@@ -76,8 +76,12 @@ mixin _$Restaurant {
   Location get coordinates => throw _privateConstructorUsedError;
   set coordinates(Location value) => throw _privateConstructorUsedError;
 
+  /// Serializes this Restaurant to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of Restaurant
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $RestaurantCopyWith<Restaurant> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -133,6 +137,8 @@ class _$RestaurantCopyWithImpl<$Res, $Val extends Restaurant>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of Restaurant
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -281,6 +287,8 @@ class _$RestaurantCopyWithImpl<$Res, $Val extends Restaurant>
     ) as $Val);
   }
 
+  /// Create a copy of Restaurant
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $RestaurantManagerCopyWith<$Res>? get manager {
@@ -293,6 +301,8 @@ class _$RestaurantCopyWithImpl<$Res, $Val extends Restaurant>
     });
   }
 
+  /// Create a copy of Restaurant
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $SubscriptionCopyWith<$Res>? get subscription {
@@ -305,6 +315,8 @@ class _$RestaurantCopyWithImpl<$Res, $Val extends Restaurant>
     });
   }
 
+  /// Create a copy of Restaurant
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $LocationCopyWith<$Res> get coordinates {
@@ -368,6 +380,8 @@ class __$$RestaurantImplCopyWithImpl<$Res>
       _$RestaurantImpl _value, $Res Function(_$RestaurantImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of Restaurant
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -547,7 +561,7 @@ class _$RestaurantImpl implements _Restaurant {
       this.subscription,
       this.viewsCount,
       this.reviewsCount,
-      this.isVisible = false,
+      this.isVisible = true,
       this.coordinates = const Location()});
 
   factory _$RestaurantImpl.fromJson(Map<String, dynamic> json) =>
@@ -637,7 +651,9 @@ class _$RestaurantImpl implements _Restaurant {
     return 'Restaurant(id: $id, name: $name, description: $description, city: $city, country: $country, countryCode: $countryCode, takeOutAvailable: $takeOutAvailable, onSiteAvailable: $onSiteAvailable, deliveryAvailable: $deliveryAvailable, phone: $phone, address: $address, openingTime: $openingTime, closingTime: $closingTime, workingDays: $workingDays, specialities: $specialities, images: $images, menuImages: $menuImages, websiteURL: $websiteURL, averageMealPrice: $averageMealPrice, updatedAt: $updatedAt, authorId: $authorId, createdAt: $createdAt, manager: $manager, subscription: $subscription, viewsCount: $viewsCount, reviewsCount: $reviewsCount, isVisible: $isVisible, coordinates: $coordinates)';
   }
 
-  @JsonKey(ignore: true)
+  /// Create a copy of Restaurant
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$RestaurantImplCopyWith<_$RestaurantImpl> get copyWith =>
@@ -768,8 +784,11 @@ abstract class _Restaurant implements Restaurant {
   @override
   Location get coordinates;
   set coordinates(Location value);
+
+  /// Create a copy of Restaurant
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$RestaurantImplCopyWith<_$RestaurantImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

@@ -50,7 +50,7 @@ _$RestaurantImpl _$$RestaurantImplFromJson(Map<String, dynamic> json) =>
           : Subscription.fromJson(json['subscription'] as Map<String, dynamic>),
       viewsCount: (json['viewsCount'] as num?)?.toInt(),
       reviewsCount: (json['reviewsCount'] as num?)?.toInt(),
-      isVisible: json['isVisible'] as bool? ?? false,
+      isVisible: json['isVisible'] as bool? ?? true,
       coordinates: json['coordinates'] == null
           ? const Location()
           : Location.fromJson(json['coordinates'] as Map<String, dynamic>),
@@ -147,43 +147,35 @@ abstract class _$$RestaurantImplPerFieldToJson {
   static Object? coordinates(Location instance) => instance.toJson();
 }
 
-Map<String, dynamic> _$$RestaurantImplToJson(_$RestaurantImpl instance) {
-  final val = <String, dynamic>{
-    'id': instance.id,
-    'name': instance.name,
-    'description': instance.description,
-    'city': instance.city,
-    'country': instance.country,
-    'countryCode': instance.countryCode,
-    'takeOutAvailable': instance.takeOutAvailable,
-    'onSiteAvailable': instance.onSiteAvailable,
-    'deliveryAvailable': instance.deliveryAvailable,
-    'phone': instance.phone,
-    'address': instance.address,
-    'openingTime': instance.openingTime,
-    'closingTime': instance.closingTime,
-    'workingDays': instance.workingDays,
-    'specialities': instance.specialities,
-    'images': instance.images,
-    'menuImages': instance.menuImages,
-    'websiteURL': instance.websiteURL,
-    'averageMealPrice': instance.averageMealPrice,
-    'updatedAt': instance.updatedAt.toIso8601String(),
-    'authorId': instance.authorId,
-    'createdAt': instance.createdAt.toIso8601String(),
-  };
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('manager', instance.manager?.toJson());
-  writeNotNull('subscription', instance.subscription?.toJson());
-  writeNotNull('viewsCount', instance.viewsCount);
-  writeNotNull('reviewsCount', instance.reviewsCount);
-  val['isVisible'] = instance.isVisible;
-  val['coordinates'] = instance.coordinates.toJson();
-  return val;
-}
+Map<String, dynamic> _$$RestaurantImplToJson(_$RestaurantImpl instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'name': instance.name,
+      'description': instance.description,
+      'city': instance.city,
+      'country': instance.country,
+      'countryCode': instance.countryCode,
+      'takeOutAvailable': instance.takeOutAvailable,
+      'onSiteAvailable': instance.onSiteAvailable,
+      'deliveryAvailable': instance.deliveryAvailable,
+      'phone': instance.phone,
+      'address': instance.address,
+      'openingTime': instance.openingTime,
+      'closingTime': instance.closingTime,
+      'workingDays': instance.workingDays,
+      'specialities': instance.specialities,
+      'images': instance.images,
+      'menuImages': instance.menuImages,
+      'websiteURL': instance.websiteURL,
+      'averageMealPrice': instance.averageMealPrice,
+      'updatedAt': instance.updatedAt.toIso8601String(),
+      'authorId': instance.authorId,
+      'createdAt': instance.createdAt.toIso8601String(),
+      if (instance.manager?.toJson() case final value?) 'manager': value,
+      if (instance.subscription?.toJson() case final value?)
+        'subscription': value,
+      if (instance.viewsCount case final value?) 'viewsCount': value,
+      if (instance.reviewsCount case final value?) 'reviewsCount': value,
+      'isVisible': instance.isVisible,
+      'coordinates': instance.coordinates.toJson(),
+    };

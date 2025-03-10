@@ -38,7 +38,7 @@ class Restaurant with _$Restaurant {
     Subscription? subscription,
     int? viewsCount,
     int? reviewsCount,
-    @Default(false) bool isVisible,
+    @Default(true) bool isVisible,
     @Default(Location()) Location coordinates,
   }) = _Restaurant;
 

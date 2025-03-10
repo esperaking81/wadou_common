@@ -29,8 +29,12 @@ mixin _$RestaurantManager {
   String get phone => throw _privateConstructorUsedError;
   set phone(String value) => throw _privateConstructorUsedError;
 
+  /// Serializes this RestaurantManager to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of RestaurantManager
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $RestaurantManagerCopyWith<RestaurantManager> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -54,6 +58,8 @@ class _$RestaurantManagerCopyWithImpl<$Res, $Val extends RestaurantManager>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of RestaurantManager
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -102,6 +108,8 @@ class __$$RestaurantManagerImplCopyWithImpl<$Res>
       $Res Function(_$RestaurantManagerImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of RestaurantManager
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -158,7 +166,9 @@ class _$RestaurantManagerImpl implements _RestaurantManager {
     return 'RestaurantManager(id: $id, name: $name, surname: $surname, phone: $phone)';
   }
 
-  @JsonKey(ignore: true)
+  /// Create a copy of RestaurantManager
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$RestaurantManagerImplCopyWith<_$RestaurantManagerImpl> get copyWith =>
@@ -195,8 +205,11 @@ abstract class _RestaurantManager implements RestaurantManager {
   @override
   String get phone;
   set phone(String value);
+
+  /// Create a copy of RestaurantManager
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$RestaurantManagerImplCopyWith<_$RestaurantManagerImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

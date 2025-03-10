@@ -55,26 +55,19 @@ abstract class _$$UserImplPerFieldToJson {
   static Object? role(UserRole instance) => _$UserRoleEnumMap[instance]!;
 }
 
-Map<String, dynamic> _$$UserImplToJson(_$UserImpl instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('uid', instance.uid);
-  writeNotNull('name', instance.name);
-  writeNotNull('email', instance.email);
-  writeNotNull('type', _$UserTypeEnumMap[instance.type]);
-  writeNotNull('surname', instance.surname);
-  writeNotNull('phoneNumber', instance.phoneNumber);
-  writeNotNull('updatedAt', instance.updatedAt?.toIso8601String());
-  val['createdAt'] = instance.createdAt.toIso8601String();
-  val['role'] = _$UserRoleEnumMap[instance.role]!;
-  return val;
-}
+Map<String, dynamic> _$$UserImplToJson(_$UserImpl instance) =>
+    <String, dynamic>{
+      if (instance.uid case final value?) 'uid': value,
+      if (instance.name case final value?) 'name': value,
+      if (instance.email case final value?) 'email': value,
+      if (_$UserTypeEnumMap[instance.type] case final value?) 'type': value,
+      if (instance.surname case final value?) 'surname': value,
+      if (instance.phoneNumber case final value?) 'phoneNumber': value,
+      if (instance.updatedAt?.toIso8601String() case final value?)
+        'updatedAt': value,
+      'createdAt': instance.createdAt.toIso8601String(),
+      'role': _$UserRoleEnumMap[instance.role]!,
+    };
 
 const _$UserTypeEnumMap = {
   UserType.client: 'client',
